@@ -1,0 +1,29 @@
+.btn {
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #9654d9;
+  background-color: #fff;
+  transition: .2s;
+
+  &-text {
+    padding: 0 20px;
+  }
+
+  &-ico {
+    width: 25px;
+  }
+
+  &:hover {
+    background-color: #9654d9;
+    color: #fff;
+  }
+
+  &:focus,
+  &:active {
+      background-color: #5f249b;
+      color: white;
+      border-color: #5f249b;
+  }
+}

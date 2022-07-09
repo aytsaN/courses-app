@@ -1,6 +1,9 @@
 <div class="wrapper">
   <app-header>
-    <span>Dave</span>
-    <app-button [btnText]="'Logout'" (click)="openModal()"></app-button>
+    <span>{{ headerUserName }}</span>
+    <app-button [btnText]="headerBtnText" (click)="openModal()"></app-button>
   </app-header>
+  <app-info [infoTitle]="infoTitle" [infoText]="infoText">
+    <app-button [btnText]="infoBtnText" (click)="openModal()"></app-button>
+  </app-info>
 </div>

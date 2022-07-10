@@ -1,0 +1,18 @@
+.course__card {
+  position: relative;
+}
+
+.course__buttons {
+  position: absolute;
+  width: inherit;
+  margin-top: 10px;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+
+  &_flex_end {
+    right: 20px;
+    justify-content: flex-end;
+  }
+}

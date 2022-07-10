@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { mockedCourseList } from '../../data/mocks';
+import { CourseBtnAction } from './components/course-list/course-list.component';
 
 @Component({
   selector: 'app-courses',
@@ -11,6 +13,8 @@ export class CoursesComponent implements OnInit {
   infoBtnText: string = '';
   headerBtnText: string = '';
   headerUserName: string = '';
+
+  courseListData = mockedCourseList;
 
   constructor() { }
 
@@ -26,4 +30,7 @@ export class CoursesComponent implements OnInit {
     console.log('btn click');
   }
 
+  courseAction(action: CourseBtnAction) {
+    console.log(action);
+  }
 }

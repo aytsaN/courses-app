@@ -1,0 +1,7 @@
+<app-course-card *ngFor="let course of courseList" [card]="course" class="course__card">
+  <div class="course__buttons" [class.course__buttons_flex_end] = "isEditable">
+    <app-button [btnText]="cardBtnText" (click)="handleAction('show')"></app-button>
+    <app-button btnIcon="faPen" *ngIf="isEditable" (click)="handleAction('edit')"></app-button>
+    <app-button btnIcon="faTrash" *ngIf="isEditable" (click)="handleAction('remove')"></app-button>
+  </div>
+</app-course-card>

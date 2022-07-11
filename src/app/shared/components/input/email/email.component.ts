@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-email-input',
@@ -7,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class EmailInputComponent implements OnInit {
   @Input() form: any;
+  @Input() control?: AbstractControl;
   email: string = '';
 
   constructor() { }

@@ -9,6 +9,7 @@ import { IconDefinition, faPen, faTrash } from '@fortawesome/free-solid-svg-icon
 export class ButtonComponent implements OnInit {
   @Input() btnText?: string;
   @Input() btnIcon?: 'faPen' | 'faTrash';
+  @Input() btnType: string = 'button';
 
   faIcon?: IconDefinition;
 

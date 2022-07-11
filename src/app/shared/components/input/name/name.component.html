@@ -1,1 +1,8 @@
-<p>name works!</p>
+<label for="name">Name</label>
+<input type="name" id="name" class="form-control">
+
+<div *ngIf="form.controls.name?.invalid && (form.controls.name?.dirty || form.controls.name?.touched)" class="alert">
+  <div *ngIf="form.controls.name?.errors?.['required']">
+    Name is required.
+  </div>
+</div>

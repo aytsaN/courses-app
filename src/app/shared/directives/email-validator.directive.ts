@@ -14,12 +14,16 @@ export class EmailValidatorDirective {
   constructor() { }
 
   validate(control: AbstractControl): ValidationErrors | null {
-    if (!control.value) return null;
-    return emailValidator(control.value) ? null : { forbiddenEmail: { value: control.value } };
+    return validateEmail(control);
   }
 }
 
-export function emailValidator(email: string): RegExpMatchArray | null {
+export function validateEmail(control: AbstractControl): ValidationErrors | null {
+  if (!control.value) return null;
+  return emailValidator(control.value) ? null : { forbiddenEmail: { value: control.value } };
+}
+
+function emailValidator(email: string): RegExpMatchArray | null {
   return (email)
     .toLowerCase()
     .match(

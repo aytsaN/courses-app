@@ -1,6 +1,50 @@
 .content {
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
   border: 1px solid rgb(151, 194, 243);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+  width: 40%;
+
+  &__title {
+    font-weight: 700;
+  }
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.form-control {
+  height: 20px;
+  width: inherit;
+}
+
+label {
+  width: 100%;
+  font-weight: 700;
+}
+
+.alert {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  color: #b32f2d;
+  font-size: 1.2rem;
+}
+
+.ng-invalid:not(form)  {
+  border-color:#b32f2d;
 }

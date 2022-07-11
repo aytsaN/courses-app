@@ -1,13 +1,56 @@
 <div class="wrapper">
   <app-header></app-header>
   <div class="content">
-    <app-form
+    <!-- template-driven solution -->
+    <!-- <app-form
       [isRegistrationPage]="true"
       [formClass]="'registration-form'"
       [title]="'Registration'"
       [btnText]="'Registration'"
-      [info]="info"
+      [info]="formInfo"
       (submit)="submit($event)"
-    ></app-form>
+    ></app-form> -->
+    <form action="" class="form registration-form" [formGroup]="registrationForm" (ngSubmit)="onFormSubmit(registrationForm.value)">
+      <legend><h2 class="form__title" *ngIf="title">{{ title }}</h2></legend>
+
+      <div class="input-container form__input-name">
+        <label for="name">Name</label>
+        <input type="name" id="name" class="form-control" formControlName="name">
+        <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert">
+          <div *ngIf="name?.errors?.['required']">
+            Name is required.
+          </div>
+          <div *ngIf="name?.errors?.['minlength']">
+            Name should not be less than 6 symbols.
+          </div>
+        </div>
+      </div>
+
+      <div class="input-container form__input-email">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" formControlName="email">
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert">
+          <div *ngIf="email?.errors?.['required']">
+            Email is required.
+          </div>
+          <div *ngIf="email?.errors?.['forbiddenEmail']">
+            Invalid Email name.
+          </div>
+        </div>
+      </div>
+
+      <div class="input-container form__input-password">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" formControlName="password">
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert">
+          <div *ngIf="password?.errors?.['required']">
+            Password is required.
+          </div>
+        </div>
+      </div>
+
+      <app-button [btnText]="title" [btnType]="'submit'"></app-button>
+      <p class="form__info" *ngIf="formInfo">{{ formInfo.text }} <a [href]="formInfo.linkUrl" >{{ formInfo.linkText }}</a></p>
+    </form>
   </div>
 </div>

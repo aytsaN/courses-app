@@ -2,7 +2,7 @@ import { Directive, Input } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, ValidatorFn } from '@angular/forms';
 
 @Directive({
-  selector: '[appEmailValidator]',
+  selector: '[emailValidator]',
   providers: [{
     provide: NG_VALIDATORS,
     useExisting: EmailValidatorDirective,
@@ -14,7 +14,8 @@ export class EmailValidatorDirective {
   constructor() { }
 
   validate(control: AbstractControl): ValidationErrors | null {
-    return emailValidator(control.value.toString()) ? null : { value: control.value };
+    if (!control.value) return null;
+    return emailValidator(control.value) ? null : { forbiddenEmail: { value: control.value } };
   }
 }
 

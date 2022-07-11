@@ -1,1 +1,13 @@
-<p>registration works!</p>
+<div class="wrapper">
+  <app-header></app-header>
+  <div class="content">
+    <app-form
+      [isRegistrationPage]="true"
+      [formClass]="'registration-form'"
+      [title]="'Registration'"
+      [btnText]="'Registration'"
+      [info]="info"
+      (submit)="submit($event)"
+    ></app-form>
+  </div>
+</div>

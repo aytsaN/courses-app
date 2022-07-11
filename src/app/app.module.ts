@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoursesModule } from './features/courses/courses.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginModule } from './features/login/login.module';
+import { RegistrationModule } from './features/registration/registration.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserModule,
     AppRoutingModule,
     CoursesModule,
+    LoginModule,
+    RegistrationModule,
     FontAwesomeModule
   ],
   providers: [],

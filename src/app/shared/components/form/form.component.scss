@@ -1,0 +1,40 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+
+  &__title {
+    font-weight: 700;
+  }
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.form-control {
+  height: 20px;
+  width: 100%;
+}
+
+label {
+  width: 100%;
+  font-weight: 700;
+}
+
+.alert {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  color: #b32f2d;
+  font-size: 1.2rem;
+}
+
+.ng-invalid:not(form)  {
+  border-color:#b32f2d;
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Info } from 'src/app/shared/components/form/form.component';
-import { validateEmail } from 'src/app/shared/directives/email-validator.directive';
+import { validateEmail } from 'src/app/shared/directives/email-validator/email-validator.directive';
 
 type RegistrationData = {
   name: string,

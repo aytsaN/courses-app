@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { EmailValidatorDirective } from './directives/email-validator.directive';
 import { COMPONENTS } from './components';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PIPES } from './pipes';
+import { DIRECTIVES } from './directives';
 
 @NgModule({
   declarations: [
     ...COMPONENTS,
-    EmailValidatorDirective,
+    ...DIRECTIVES,
+    ...PIPES
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   exports: [
-    ...COMPONENTS
+    ...COMPONENTS,
+    ...PIPES
   ]
 })
 export class SharedModule { }

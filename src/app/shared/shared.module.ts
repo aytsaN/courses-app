@@ -5,6 +5,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { InfoComponent } from './components/info/info.component';
 import { SearchComponent } from './components/search/search.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EmailValidatorDirective } from './directives/email-validator.directive';
 
 const COMPONENTS: any[] = [
   HeaderComponent,
@@ -15,7 +16,8 @@ const COMPONENTS: any[] = [
 
 @NgModule({
   declarations: [
-    ...COMPONENTS
+    ...COMPONENTS,
+    EmailValidatorDirective
   ],
   imports: [
     CommonModule,

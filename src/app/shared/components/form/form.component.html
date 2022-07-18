@@ -1,0 +1,42 @@
+<form action="" [ngClass]="formClass" class="form" #form="ngForm" (ngSubmit)="onFormSubmit(form.value)">
+  <legend><h2 class="form__title" *ngIf="title">{{ title }}</h2></legend>
+
+  <div class="input-container form__input-name" *ngIf="isRegistrationPage">
+    <label for="name">Name</label>
+    <input type="name" id="name" class="form-control" ngModel #name="ngModel" name="name" minlength="6" required>
+    <div *ngIf="name.invalid && (name.dirty || name.touched || form.submitted)" class="alert">
+      <div *ngIf="name.errors?.['required']">
+        Name is required.
+      </div>
+      <div *ngIf="name.errors?.['minlength']">
+        Name should not be less than 6 symbols.
+      </div>
+    </div>
+  </div>
+
+  <div class="input-container form__input-email">
+    <label for="email">Email</label>
+    <input type="email" id="email" class="form-control" ngModel #email="ngModel" name="email" required emailValidator>
+    <div *ngIf="email.invalid && (email.dirty || email.touched || form.submitted)" class="alert">
+      <div *ngIf="email.errors?.['required']">
+        Email is required.
+      </div>
+      <div *ngIf="email.errors?.['forbiddenEmail']">
+        Invalid Email name.
+      </div>
+    </div>
+  </div>
+
+  <div class="input-container form__input-password">
+    <label for="password">Password</label>
+    <input type="password" id="password" class="form-control" ngModel #password="ngModel" name="password" required>
+    <div *ngIf="password.invalid && (password.dirty || password.touched || form.submitted)" class="alert">
+      <div *ngIf="password.errors?.['required']">
+        Password is required.
+      </div>
+    </div>
+  </div>
+
+  <app-button [btnText]="btnText" (click)="form.onSubmit($event)"></app-button>
+  <p class="form__info" *ngIf="info">{{ infoText }} <a [href]="infoLinkUrl" >{{ infoLinkText }}</a></p>
+</form>

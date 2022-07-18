@@ -1,0 +1,24 @@
+:host {
+  width: 100%;
+
+  * {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+  }
+
+  label {
+    font-weight: 700;
+  }
+
+  .ng-invalid:not(form)  {
+    border-color:#b32f2d;
+  }
+}
+
+.alert {
+  position: absolute;
+  padding-top: 2px;
+  color: #b32f2d;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <app-header>
+    <span>{{ headerUserName }}</span>
+    <app-button [btnText]="headerBtnText" (click)="openModal()"></app-button>
+  </app-header>
+  <!-- <app-info [infoTitle]="infoTitle" [infoText]="infoText">
+    <app-button [btnText]="infoBtnText" (click)="openModal()"></app-button>
+  </app-info> -->
+  <app-course-list
+    class="course-list"
+    [courseList]="courseListData"
+    (courseAction)="courseAction($event)"
+  >
+  </app-course-list>
+</div>

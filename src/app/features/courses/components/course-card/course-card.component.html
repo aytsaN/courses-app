@@ -8,10 +8,10 @@
       <span class="card__text_bold">Authors</span>: {{ card!.authors | stringJoiner: ', ' }}
     </div>
     <div class="card__duration" *ngIf="card?.duration">
-      <span class="card__text_bold">Duration</span>: {{ formattedDuration }}
+      <span class="card__text_bold">Duration</span>: {{ card!.duration | durationCustom }}
     </div>
     <div class="card__created" *ngIf="card?.creationDate">
-      <span class="card__text_bold">Created</span>: {{ card?.creationDate | date: 'dd.MM.yyyy'}}
+      <span class="card__text_bold">Created</span>: {{ card!.creationDate | creationDate }}
     </div>
     <ng-content></ng-content>
   </div>
